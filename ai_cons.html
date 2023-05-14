@@ -20,10 +20,60 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  
+  <style>
+    #messages{
+    height: 350px;
+    font-size: 16px;
+    vertical-align: top;
+    cursor: auto;
+    resize: none;
+    outline: none;
+    border: none;
+    overflow-y: scroll;
+}
+#messages::-webkit-scrollbar{
+    width: 10px;
+}
+#messages::-webkit-scrollbar-thumb{
+    background: #cacaca;
+    border-radius: 4px;
+}
+  </style>
+
 </head>
 <body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="assets/img/identity/familyShield55.png" alt="درع العائلة السيبرانية" srcset="">
+        </a>
+      </h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">الرئيسية</a></li>
+          <li><a class="nav-link scrollto" href="#services">خدماتنا</a></li>
+          <li><a class="nav-link scrollto" href="#team">فريق العمل</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">الباقات</a></li>
+          <li><a class="nav-link scrollto" href="#faq">الأسئلة الشائعة</a></li>
+          <li><a class="nav-link scrollto" href="#contact">تواصل معنا</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
     <section style="background-color: #eee;">
-        <div class="container py-5">
+        <div class="container">
       
           <div class="row d-flex justify-content-center">
             <div class="col-md-8 col-lg-6 col-xl-4">
@@ -31,55 +81,19 @@
               <div class="card">
                 <div class="card-header d-flex justify-content-center align-items-center p-3" style="border-top: 4px solid #003e64;">
                     <div class="row">
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 col-md-2 col-xl-2">
                             <img src="assets/img/identity/familyShield33.png" alt="درع العائلة السيبرانية" style="width: 100%;;">
                         </div>
-                        <div class="col-lg-8">
+                        <div class="col-lg-8 col-md-8 col-xl-8">
 
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 col-md-2 col-xl-2">
                             <img src="assets/img/identity/bot-regular-24.png" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="card-body" data-mdb-perfect-scrollbar="true" id="messages" style="position: relative; height: auto">
-                  <div class="d-flex flex-row justify-content-start">
-                    <img src="assets/img/identity/user-solid-24.png"
-                      alt="avatar 1" style="width: 45px; height: 100%;">
-                    <div>
-                      <p class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7;">For what reason
-                        would it
-                        be advisable for me to think about business content?</p>
-                    </div>
-                  </div>
-                  <div class="d-flex flex-row justify-content-end mb-4 pt-1">
-                    <div>
-                      <p class="small p-2 me-3 mb-3 text-white rounded-3" style="background-color: #003e64;">Thank you for your believe in
-                        our
-                        supports</p>
-                    </div>
-                    <img src="assets/img/identity/bot-regular-24.png"
-                      alt="avatar 1" style="width: 45px; height: 100%;">
-                  </div>
-                  <div class="d-flex flex-row justify-content-start">
-                    <img src="assets/img/identity/user-solid-24.png"
-                      alt="avatar 1" style="width: 45px; height: 100%;">
-                    <div>
-                      <p class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7;">Lorem ipsum dolor
-                        sit amet
-                        consectetur adipisicing elit similique quae consequatur</p>
-                    </div>
-                  </div>
-                  <div class="d-flex flex-row justify-content-end mb-4 pt-1">
-                    <div>
-                      <p class="small p-2 me-3 mb-3 text-white rounded-3" style="background-color: #003e64;">Dolorum quasi voluptates quas
-                        amet in
-                        repellendus perspiciatis fugiat</p>
-                    </div>
-                    <img src="assets/img/identity/bot-regular-24.png"
-                      alt="avatar 1" style="width: 45px; height: 100%;">
-                  </div>
-      
+                <div class="card-body" data-mdb-perfect-scrollbar="true" id="messages">
+                  
                 </div>
                 <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
                   <div class="input-group mb-0">
@@ -97,6 +111,20 @@
         </div>
       </section>
 
+      <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+            جميع الحقوق محفوظة &copy;<strong><span>درع العائلة السيبرانية</span></strong>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
       <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -109,25 +137,334 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/sse.js"></script>
+
+  <!-- AXIOS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script>
   
   <script>
-    let messages = document.getElementById("messages");
 
-    // let user_message = document.getElementsByClassName("user_message")[0];
+    const input = document.querySelector('input');
+    const button = document.querySelector('button');
+    const messages = document.getElementById('messages');
 
-    let user_message = '<div class="d-flex flex-row justify-content-end mb-4 pt-1">';
-        user_message += '<div>';
-        user_message += '<p class="small p-2 me-3 mb-3 text-white rounded-3" style="background-color: #003e64;">Thank you for your believe in our supports</p>';
-        user_message += '</div>';
-        user_message += '<img src="assets/img/identity/bot-regular-24.png" alt="avatar 1" style="width: 45px; height: 100%;">';
-        user_message += '</div>';
+    // button.onclick = () => {
+
+    //   var prompt = input.value
+
+    //   if(prompt != "") {
+
+    //     // use SSE to get server Events
+    //     var source = new SSE("request.php?prompt="+ prompt);
+
+    //     source.addEventListener('message', function(e) {
+    //       // if(e.data) {
+
+    //         // if(e.data != '') {
+    //           // var tokens = JSON.parse(e).choices[0].message["content"];
+    //           var tokens = e;
+
+    //           console.log(tokens);
+              
+    //           const user_message_div = document.createElement("div");
+
+    //           // d-flex flex-row justify-content-start
+
+    //           user_message_div.classList.add('d-flex');
+    //           user_message_div.classList.add('flex-row');
+    //           user_message_div.classList.add('justify-content-start');
+    //           user_message_div.classList.add('mb-4');
+    //           user_message_div.classList.add('pt-1');
+
+    //           const user_message_img = document.createElement("img");
+    //           user_message_img.src = "assets/img/identity/user-solid-24.png";
+
+    //           // width: 45px; height: 100%;
+    //           user_message_img.style.width = "45px";
+    //           user_message_img.style.height = "100%";
+
+    //           user_message_div.appendChild(user_message_img);
+
+    //           const user_message_sub_div = document.createElement("div");
+
+    //           // Append the text node to the "li" node:
+    //           user_message_div.appendChild(user_message_sub_div);
+
+    //           const user_message_p = document.createElement("p");
+              
+    //           user_message_p.textContent = prompt;
+
+    //           // small p-2 ms-3 mb-3 rounded-3
+    //           user_message_p.classList.add('small');
+    //           user_message_p.classList.add('p-2');
+    //           user_message_p.classList.add('ms-3');
+    //           user_message_p.classList.add('mb-3');
+    //           user_message_p.classList.add('rounded-3');
+
+    //           user_message_p.style.backgroundColor = "#f5f6f7";
+
+    //           user_message_sub_div.appendChild(user_message_p);
+
+    //           // Append the "li" node to the list:
+    //           document.getElementById("messages").appendChild(user_message_div);
+
+    //           // --------- Ai reply ---------------------------------
+
+    //           const ai_message_div = document.createElement("div");
+
+    //           // d-flex flex-row justify-content-end mb-4 pt-1
+
+    //           ai_message_div.classList.add('d-flex');
+    //           ai_message_div.classList.add('flex-row');
+    //           ai_message_div.classList.add('justify-content-end');
+    //           ai_message_div.classList.add('mb-4');
+    //           ai_message_div.classList.add('pt-1');
+
+    //           const ai_message_img = document.createElement("img");
+    //           ai_message_img.src = "assets/img/identity/bot-regular-24.png";
+
+    //           // width: 45px; height: 100%;
+    //           ai_message_img.style.width = "45px";
+    //           ai_message_img.style.height = "100%";
+
+    //           ai_message_div.appendChild(ai_message_img);
+
+    //           const ai_message_sub_div = document.createElement("div");
+
+    //           // Append the text node to the "li" node:
+    //           ai_message_div.appendChild(ai_message_sub_div);
+
+    //           const ai_message_p = document.createElement("p");
+              
+    //           ai_message_p.textContent = tokens;
+
+    //           // small p-2 me-3 mb-3 text-white rounded-3
+    //           ai_message_p.classList.add('small');
+    //           ai_message_p.classList.add('p-2');
+    //           ai_message_p.classList.add('me-3');
+    //           ai_message_p.classList.add('mb-3');
+    //           ai_message_p.classList.add('text-white');
+    //           ai_message_p.classList.add('rounded-3');
+
+    //           ai_message_p.style.backgroundColor = "#003e64";
+
+    //           ai_message_sub_div.appendChild(ai_message_p);
+
+    //           // Append the "li" node to the list:
+    //           document.getElementById("messages").appendChild(ai_message_div);
+
+    //         // } else {
+              
+    //         //   console.log("Completed");
+    //         // }
+    //       // }
+    //     });
+    //     source.stream();
+    //   }
+    // }
+
+    // button.onclick = () => {
+
+    //   const user_message_div = document.createElement("div");
+
+    //   // d-flex flex-row justify-content-start
+
+    //   user_message_div.classList.add('d-flex');
+    //   user_message_div.classList.add('flex-row');
+    //   user_message_div.classList.add('justify-content-start');
+    //   user_message_div.classList.add('mb-4');
+    //   user_message_div.classList.add('pt-1');
+
+    //   const user_message_img = document.createElement("img");
+    //   user_message_img.src = "assets/img/identity/user-solid-24.png";
+
+    //   // width: 45px; height: 100%;
+    //   user_message_img.style.width = "45px";
+    //   user_message_img.style.height = "100%";
+
+    //   user_message_div.appendChild(user_message_img);
+
+    //   const user_message_sub_div = document.createElement("div");
+
+    //   // Append the text node to the "li" node:
+    //   user_message_div.appendChild(user_message_sub_div);
+
+    //   const user_message_p = document.createElement("p");
+      
+    //   user_message_p.textContent = "test";
+
+    //   // small p-2 ms-3 mb-3 rounded-3
+    //   user_message_p.classList.add('small');
+    //   user_message_p.classList.add('p-2');
+    //   user_message_p.classList.add('ms-3');
+    //   user_message_p.classList.add('mb-3');
+    //   user_message_p.classList.add('rounded-3');
+
+    //   user_message_p.style.backgroundColor = "#f5f6f7";
+
+    //   user_message_sub_div.appendChild(user_message_p);
+
+    //   // Append the "li" node to the list:
+    //   document.getElementById("messages").appendChild(user_message_div);
+    // }
+
+    button.onclick = () => {
+
+      sendToChatGPT();
+    }
+
+    function sendToChatGPT() {
+  
+      var prompt = input.value
+
+      let body = {
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: prompt }],
+        temperature: 1,
+        max_tokens: 200
+      };
+
+      const user_message_div = document.createElement("div");
+
+              // d-flex flex-row justify-content-start
+
+              user_message_div.classList.add('d-flex');
+              user_message_div.classList.add('flex-row');
+              user_message_div.classList.add('justify-content-start');
+              user_message_div.classList.add('mb-4');
+              user_message_div.classList.add('pt-1');
+
+              const user_message_img = document.createElement("img");
+              user_message_img.src = "assets/img/identity/user-solid-24.png";
+
+              // width: 45px; height: 100%;
+              user_message_img.style.width = "45px";
+              user_message_img.style.height = "100%";
+
+              user_message_div.appendChild(user_message_img);
+
+              const user_message_sub_div = document.createElement("div");
+
+              user_message_sub_div.style.width = "100%";
+
+              // Append the text node to the "li" node:
+              user_message_div.appendChild(user_message_sub_div);
+
+              const user_message_p = document.createElement("p");
+              
+              user_message_p.textContent = prompt;
+
+              // small p-2 ms-3 mb-3 rounded-3
+              user_message_p.classList.add('small');
+              user_message_p.classList.add('p-3');
+              user_message_p.classList.add('ms-3');
+              user_message_p.classList.add('mb-3');
+              user_message_p.classList.add('rounded-3');
+
+              user_message_p.style.backgroundColor = "#f5f6f7";
+
+              user_message_sub_div.appendChild(user_message_p);
+
+              // Append the "li" node to the list:
+              document.getElementById("messages").appendChild(user_message_div);
+
+              const ai_message_div = document.createElement("div");
+
+              // d-flex flex-row justify-content-end mb-4 pt-1
+
+              // ----------- Ai reply ----------
+
+              ai_message_div.classList.add('d-flex');
+              ai_message_div.classList.add('flex-row');
+              ai_message_div.classList.add('justify-content-end');
+              ai_message_div.classList.add('mb-4');
+              ai_message_div.classList.add('pt-1');
+
+              const ai_message_sub_div = document.createElement("div");
+
+              // Append the text node to the "li" node:
+              ai_message_div.appendChild(ai_message_sub_div);
+
+              const ai_message_img = document.createElement("img");
+              ai_message_img.src = "assets/img/identity/bot-regular-24.png";
+
+              // width: 45px; height: 100%;
+              ai_message_img.style.width = "45px";
+              ai_message_img.style.height = "100%";
+
+              ai_message_div.appendChild(ai_message_img);
+
+              const ai_message_p = document.createElement("p");
+
+              // small p-2 me-3 mb-3 text-white rounded-3
+              ai_message_p.classList.add('small');
+              ai_message_p.classList.add('p-3');
+              ai_message_p.classList.add('me-3');
+              ai_message_p.classList.add('mb-3');
+              ai_message_p.classList.add('text-white');
+              ai_message_p.classList.add('rounded-3');
+
+              ai_message_p.style.backgroundColor = "#003e64";
+
+              ai_message_sub_div.appendChild(ai_message_p);
+
+              // Append the "li" node to the list:
+              document.getElementById("messages").appendChild(ai_message_div);
+
+      input.value = "";
+
+      let headers = {
+        Authorization: "Bearer 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",
+      };
+
+      messages.scrollTop = messages.scrollHeight;
+
+      axios
+        .post("https://api.openai.com/v1/chat/completions", body, {
+          headers: headers,
+        })
+        .then((response) => {
+          let reply = response.data.choices[0].message.content;
+          // document.getElementById("reply-content").textContent = reply;
+
+              // --------- Ai reply ---------------------------------
+
+              // ai_message_p.textContent = reply;
+
+              typeWriter(reply, "p", 50);
+
+              // bottomScroll();
+
+        });
+  }
+
+  function bottomScroll() {
     
-    document.getElementById("button-addon2").addEventListener("click", function() {
+    messages.scrollIntoView(false);
+    messages.scrollTo(0, messages.scrollHeight);
+  }
 
-        let create_user_message = document.createElement(user_message);
+  function typeWriter(text, elementSelector, delay) {
+    let i = 0;
+    const speed = delay || 100; // default speed of 100ms per character
+    const element = document.querySelectorAll(elementSelector);
 
-        document.body.messages.appendChild(create_user_message);
-    });
+    const last_message = element[element.length- 1];
+
+    function type() {
+      if (i < text.length) {
+        last_message.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+
+        messages.scrollTop = messages.scrollHeight;
+
+      }
+    }
+
+    type();
+}
+
   </script>
 </body>
 </html>
