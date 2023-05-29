@@ -52,8 +52,8 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="index.html">الرئيسية</a></li>
                     <li><a class="nav-link scrollto" href="#services">خدماتنا</a></li>
-                    <li><a class="nav-link scrollto" href="#team">فريق العمل</a></li>
                     <li><a class="nav-link scrollto" href="#pricing">الباقات</a></li>
+                    <li><a class="nav-link scrollto" href="#team">فريق العمل</a></li>
                     <li><a class="nav-link scrollto" href="#faq">الأسئلة الشائعة</a></li>
                     <li><a class="nav-link scrollto" href="#contact">تواصل معنا</a></li>
                 </ul>
@@ -63,50 +63,53 @@
         </div>
     </header><!-- End Header -->
 
-        <div class="container mt-15">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="mb-3">
-                        <h3 class="text-center">أستشر متخصص</h3>
-                    </div>
-                    <?php if (isset($_SESSION["msg"])) { ?>
-                        <div class="row text-center">
-                            <div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 col-xs-12">
-                                <span class="text-center" style="background-color: green; color: white;"><?php echo $_SESSION["msg"]["message"]; ?></span>
-                            </div>
-                        </div>
-                        <?php unset($_SESSION["msg"]); ?>
-                    <?php } ?>
-                    <form action="insert_cs.php" method="post" class="shadow p-4">
-                        <div class="mb-3">
-                            <label for="name">الأسم</label>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="الأسم" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="age">العمر</label>
-                            <input type="text" class="form-control" name="age" id="age" placeholder="العمر" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email">البريد الالكتروني</label>
-                            <input type="text" class="form-control" name="email" id="email" placeholder="البريد الالكتروني" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="issue">تكلم عن مشكلتك</label>
-                            <textarea name="issue" id="issue" cols="30" rows="4" class="form-control" required></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="appointment">أحجز موعد</label>
-                            <input type="date" class="form-control" name="appointment" id="appointment" placeholder="الموعد" required>
-                        </div>
-                        <div class="mb-3">
-                            <button type="submit" class="btn btn-primary">ارسال</button>
-                        </div>
-
-                    </form>
+    <div class="container mt-15">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="mb-3">
+                    <h3 class="text-center">أستشر متخصص</h3>
                 </div>
+                <?php if (isset($_SESSION["msg"])) { ?>
+                <div class="row text-center">
+                    <div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 col-xs-12">
+                        <span class="text-center"
+                            style="background-color: green; color: white;"><?php echo $_SESSION["msg"]["message"]; ?></span>
+                    </div>
+                </div>
+                <?php unset($_SESSION["msg"]); ?>
+                <?php } ?>
+                <form action="insert_cs.php" method="post" class="shadow p-4">
+                    <div class="mb-3">
+                        <label for="name">الأسم</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="الأسم" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="age">العمر</label>
+                        <input type="text" class="form-control" name="age" id="age" placeholder="العمر" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">البريد الالكتروني</label>
+                        <input type="text" class="form-control" name="email" id="email" placeholder="البريد الالكتروني"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="issue">تكلم عن مشكلتك</label>
+                        <textarea name="issue" id="issue" cols="30" rows="4" class="form-control" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="appointment">أحجز موعد</label>
+                        <input type="date" class="form-control" name="appointment" id="appointment" placeholder="الموعد"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">ارسال</button>
+                    </div>
+
+                </form>
             </div>
         </div>
+    </div>
 
     <!-- ======= Footer ======= -->
     <footer id="footer">

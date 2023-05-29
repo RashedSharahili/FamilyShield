@@ -1,4 +1,9 @@
 <?php session_start(); ?>
+<?php 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: POST, GET, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Origin: Content-Type, X-Auth-Token, Origin, Authorization");
+ ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -52,8 +57,8 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="index.html">الرئيسية</a></li>
                     <li><a class="nav-link scrollto" href="#services">خدماتنا</a></li>
-                    <li><a class="nav-link scrollto" href="#team">فريق العمل</a></li>
                     <li><a class="nav-link scrollto" href="#pricing">الباقات</a></li>
+                    <li><a class="nav-link scrollto" href="#team">فريق العمل</a></li>
                     <li><a class="nav-link scrollto" href="#faq">الأسئلة الشائعة</a></li>
                     <li><a class="nav-link scrollto" href="#contact">تواصل معنا</a></li>
                 </ul>
@@ -63,41 +68,46 @@
         </div>
     </header><!-- End Header -->
 
-        <div class="container mt-15">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="mb-3">
-                        <h3 class="text-center">وعي أسرتك</h3>
-                    </div>
-                    <?php if (isset($_SESSION["msg"])) { ?>
-                        <div class="row text-center">
-                            <div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 col-xs-12">
-                                <span class="text-center" style="background-color: green; color: white;"><?php echo $_SESSION["msg"]["message"]; ?></span>
-                            </div>
-                        </div>
-                        <?php unset($_SESSION["msg"]); ?>
-                    <?php } ?>
-                    <form action="insert_af.php" method="post" class="shadow p-4">
-                        <div class="mb-3">
-                            <label for="name">الأسم</label>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="الأسم" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email">البريد الالكتروني</label>
-                            <input type="text" class="form-control" name="email" id="email" placeholder="البريد الالكتروني" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="appointment">المنصب</label>
-                            <input type="text" class="form-control" name="position" id="position" placeholder="المنصب" required>
-                        </div>
-                        <div class="mb-3">
-                            <button type="submit" class="btn btn-primary">ارسال</button>
-                        </div>
-
-                    </form>
+    <div class="container mt-15">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="mb-3">
+                    <h3 class="text-center">وعي أسرتك</h3>
                 </div>
+                <?php if (isset($_SESSION["msg"])) { ?>
+                <div class="row text-center">
+                    <div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 col-xs-12">
+                        <span class="text-center"
+                            style="background-color: green; color: white;"><?php echo $_SESSION["msg"]["message"]; ?></span>
+                    </div>
+                </div>
+                <?php unset($_SESSION["msg"]); ?>
+                <?php } ?>
+                <form action="insert_af.php" method="post" class="shadow p-4">
+                    <div class="mb-3">
+                        <label for="name">الأسم</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="الأسم" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">البريد الالكتروني</label>
+                        <input type="text" class="form-control" name="email" id="email" placeholder="البريد الالكتروني"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="appointment">المنصب</label>
+                        <input type="text" class="form-control" name="position" id="position" placeholder="المنصب"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">ارسال</button>
+                    </div>
+
+                </form>
+
+                <!-- <button id="submit_btn">Click </button> -->
             </div>
         </div>
+    </div>
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
@@ -125,6 +135,65 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- AXIOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script>
+
+    <script>
+    // const axios = require('axios');
+
+    const btn = document.getElementById('submit_btn');
+
+    // API configuration
+    const apiUrl = 'https://127.0.0.1:3333/api'; // Replace with your GoPhish instance URL
+    const apiKey =
+    'efca96710edf7599f327809424b75b3e43f6c615d8854bd013cab43ca83ffd6d'; // Replace with your GoPhish API key
+
+    // Authorization headers
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+    };
+
+    btn.onclick = () => {
+
+        // Call the API request
+        createCampaign();
+
+    }
+
+    // Create a new campaign
+    async function createCampaign() {
+        try {
+            const campaignData = {
+                name: 'My Campaign',
+                template: {
+                    name: 'Phishing Template', // Replace with the name of your template
+                    subject: 'Important Message', // Replace with the subject of your template
+                    text: 'This is the body of the email.' // Replace with the body of your template
+                },
+                landing_page: {
+                    name: 'Phishing Page', // Replace with the name of your landing page
+                    url: 'https://www.seedprod.com/' // Replace with the URL of your landing page
+                },
+                sending_profile: {
+                    name: 'Rashed' // Replace with the name of your sending profile
+                },
+                groups: [{
+                    name: 'Family1'
+                }]
+            };
+
+            const response = await axios.post(`${apiUrl}/campaigns`, campaignData, {
+                headers
+            });
+            console.log('Campaign created successfully!');
+            console.log(response.data);
+        } catch (error) {
+            console.error('Error:', error.response);
+        }
+    }
+    </script>
 </body>
 
 </html>
